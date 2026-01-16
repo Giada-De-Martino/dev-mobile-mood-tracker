@@ -1,0 +1,457 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:2:1-27:12
+MERGED from [androidx.navigation:navigation-runtime-android:2.9.6] /home/giada-de-martino/.gradle/caches/8.13/transforms/28d52509f92e21faafb9114dd319da47/transformed/navigation-runtime-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common-android:2.9.6] /home/giada-de-martino/.gradle/caches/8.13/transforms/649945c911ee2d4daeb1eb003ee4865e/transformed/navigation-common-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-compose-android:2.9.6] /home/giada-de-martino/.gradle/caches/8.13/transforms/685d31a8fe972a8dd29fc426bf80be5f/transformed/navigation-compose-release/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-compose:2.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/004a6bcb28563ec7323a03fe2e61640f/transformed/coil-compose-2.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-compose-base:2.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/265f706cb6b6802d5bc722a2923da7a4/transformed/coil-compose-base-2.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material3:material3-android:1.3.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/b5493fe94d52ada13c676d6721312311/transformed/material3-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/19cac296a6f2322264124aede80e054b/transformed/ui-tooling-data/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/c75e275e6897e407b27794072250fcae/transformed/ui-tooling-preview/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.animation:animation-core-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/15e5c7def36fa074f772276f839ecf84/transformed/animation-core/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/3c8505fa4eac5e7d49cd8ebdc9699252/transformed/ui-unit/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/163a55de9bd5330524893d7ea11a2feb/transformed/ui-graphics/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/33eefbe04c8dbb5855fdf70c2257b848/transformed/ui-geometry/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-text-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/960b60d0f53de62a571ab3da3246ae6d/transformed/ui-text/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-util-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/c72d725dbfd5ab9403872479fae04b59/transformed/ui-util/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/b6d29c0de2095518255a213830093348/transformed/ui-tooling/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.material:material-android:1.7.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/e141f0f737fe58afbf621da4ba8f3069/transformed/material-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-ripple-android:1.7.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/3faf2cdb2ae76d072129edcc73696f71/transformed/material-ripple-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/5eeb1c41ad520db6f0f27368d98626d1/transformed/animation/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/e404d84ac6c732c5aa7a34a96fc06e47/transformed/foundation-layout/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/bdea385f18d4c6cd85f16cf83693530d/transformed/foundation/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigationevent:navigationevent-android:1.0.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/48304f358830d99d518ea8aded6bc0c5/transformed/navigationevent/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigationevent:navigationevent-compose-android:1.0.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/951f8afc4c2929e4787eb931c10c45eb/transformed/navigationevent-compose/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/e9a1530e618e603b366b9927112263c1/transformed/accompanist-drawablepainter-0.32.0/AndroidManifest.xml:17:1-23:12
+MERGED from [io.coil-kt:coil:2.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/6640729ef6f9b23da2f975be6bc7c74a/transformed/coil-2.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-base:2.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/0e230315156cae8664cfe8a5263d4d1e/transformed/coil-base-2.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/5cb17fe68e24886a0a04e85ead7691ad/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.autofill:autofill:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/8393d3ad48f64f024635eb406ca4c66f/transformed/autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.6.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/111a0d75e0dcff8851fde50ca1f0998d/transformed/transition-1.6.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.window:window-core-android:1.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/91337e04368829e7a6e9d6c9544d6fec/transformed/window-core/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.window:window:1.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/56260f84a40b085f03cc9d5eb4cf4733/transformed/window-1.5.0/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.emoji2:emoji2:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/023098b1a4feee7c7ff02cea65e41e8d/transformed/emoji2-1.4.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/1f616de582eaa65291247a2ac1ef208e/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/c761a807de52e9cbd6197d818bc658fb/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/3b4a7f8c6daeeee45478bca2fea7bace/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.graphics:graphics-path:1.0.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/517270fed9e1218d97fac884f74724d5/transformed/graphics-path-1.0.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/30368f7b6f37b6f10812631acc6f2733/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/018efa8097fa3cc4090b4f5504109717/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/d0a259e5a0ccb7c925e2e70c1304a3f1/transformed/core-1.17.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.activity:activity-ktx:1.12.2] /home/giada-de-martino/.gradle/caches/8.13/transforms/bfd6dc9caa46550ee1df940bf1ae6b87/transformed/activity-ktx-1.12.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/1cc5e707a8358dc19d83fd96e878f456/transformed/lifecycle-livedata-core-ktx-2.10.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/b9a4e715e51e58305c8dad2daeac3553/transformed/lifecycle-livedata-2.10.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/25af402f4913fdba0e71c51f8a1a28a7/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/60dbc2585b3cca20f371b68004e9dad3/transformed/lifecycle-viewmodel-ktx-2.10.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/e81b35671e4e271d9162774bfe59aed2/transformed/lifecycle-livedata-core-2.10.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/c3f5ec094a729d6f0dc5c0fc6288554c/transformed/lifecycle-viewmodel-savedstate/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/4c3934b952f37b5b4080675b40ee0ab8/transformed/lifecycle-viewmodel-2.10.0/AndroidManifest.xml:2:1-5:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/8d2be6855b2c9c5142b19b852062cdcf/transformed/lifecycle-viewmodel/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.runtime:runtime-retain-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/f7dd975fa7de6efaecc75644d575ad95/transformed/runtime-retain/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-annotation-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/b8674b85e6f5e795b5a069029036f8b7/transformed/runtime-annotation/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/fd082d764c630c9e0ecef15b3a5328ee/transformed/savedstate-ktx-1.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.savedstate:savedstate-android:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/0cb52c1e66f84682c2ba242e51ff4497/transformed/savedstate/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate-compose-android:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/e41fc7153832f971c4f000d0e984c25e/transformed/savedstate-compose/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/c4bce1cca03f613ad824bd03eeb3b02e/transformed/runtime/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/07f3e77e0990f6cff5fa628881b76eae/transformed/runtime-saveable/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/66f67f8169151e8d5003cacb25f40bef/transformed/lifecycle-runtime-compose/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/5dff663673dda3acefe1bf875a8967da/transformed/lifecycle-runtime/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/46432a17bf30bcc5705c01cf360617a9/transformed/lifecycle-runtime-ktx/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/a18956ccd6128f9d6aafdb20d907793b/transformed/lifecycle-viewmodel-compose/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/7483e0a8efabf11e520ac568c2774904/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/9c4a6c7c206ec8a17a038b0872f2fdd1/transformed/ui/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/9332c27e93126a4363be6ab2cf12f5ad/transformed/ui-test-manifest-1.10.1/AndroidManifest.xml:17:1-29:12
+MERGED from [androidx.activity:activity:1.12.2] /home/giada-de-martino/.gradle/caches/8.13/transforms/aef93eb011d9d6eef91639753a6c3695/transformed/activity-1.12.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-compose:1.12.2] /home/giada-de-martino/.gradle/caches/8.13/transforms/a9cc37db01fc695cdde26d550c07b610/transformed/activity-compose-1.12.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/b9b2c84c469228bd7216e2e9f8f0b50e/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/670d9c461b01710d5e7a231b00b3cf99/transformed/core-ktx-1.17.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.room:room-runtime-android:2.8.4] /home/giada-de-martino/.gradle/caches/8.13/transforms/158a54d6f1b0f733052a530799f65b44/transformed/room-runtime/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.core:core-viewtree:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/77b5c08cf66d9892c4b8d32fa5900ee8/transformed/core-viewtree-1.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.annotation:annotation-experimental:1.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/12a8964fcd64a48bf1ec8f92f67e0ed1/transformed/annotation-experimental-1.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/4af37c1ed353c33c4137dd791b64991c/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/f9975fd61b1b687df6a275183a3b2d39/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.2.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/48d977dd2313c2914e29c331dd6f9ee5/transformed/tracing-1.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/69d704271755ee30e80237b52733598c/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/544559006e21793adfeade8648046362/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-framework-android:2.6.2] /home/giada-de-martino/.gradle/caches/8.13/transforms/3d7bdc8f533c8d4e7f7b68a4d65d3a13/transformed/sqlite-framework/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-android:2.6.2] /home/giada-de-martino/.gradle/caches/8.13/transforms/2b16136b5cf37bf8f978ea789cf1c086/transformed/sqlite/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /home/giada-de-martino/.gradle/caches/8.13/transforms/e2545aef2ea23253521d53af3ef1d6bc/transformed/exifinterface-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/c155ee530a511ed96075616cc5ffee8c/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/5d60875f771b2102bf814ff5c98299e2/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/8f408ed1eebe4ca6daf84f6fae14a918/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+	package
+		INJECTED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:5:5-23:19
+INJECTED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:5:5-23:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/b6d29c0de2095518255a213830093348/transformed/ui-tooling/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/b6d29c0de2095518255a213830093348/transformed/ui-tooling/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.window:window:1.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/56260f84a40b085f03cc9d5eb4cf4733/transformed/window-1.5.0/AndroidManifest.xml:22:5-29:19
+MERGED from [androidx.window:window:1.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/56260f84a40b085f03cc9d5eb4cf4733/transformed/window-1.5.0/AndroidManifest.xml:22:5-29:19
+MERGED from [androidx.emoji2:emoji2:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/023098b1a4feee7c7ff02cea65e41e8d/transformed/emoji2-1.4.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/023098b1a4feee7c7ff02cea65e41e8d/transformed/emoji2-1.4.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/d0a259e5a0ccb7c925e2e70c1304a3f1/transformed/core-1.17.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/d0a259e5a0ccb7c925e2e70c1304a3f1/transformed/core-1.17.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/25af402f4913fdba0e71c51f8a1a28a7/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/25af402f4913fdba0e71c51f8a1a28a7/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/9332c27e93126a4363be6ab2cf12f5ad/transformed/ui-test-manifest-1.10.1/AndroidManifest.xml:22:5-27:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/9332c27e93126a4363be6ab2cf12f5ad/transformed/ui-test-manifest-1.10.1/AndroidManifest.xml:22:5-27:19
+MERGED from [androidx.room:room-runtime-android:2.8.4] /home/giada-de-martino/.gradle/caches/8.13/transforms/158a54d6f1b0f733052a530799f65b44/transformed/room-runtime/AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.room:room-runtime-android:2.8.4] /home/giada-de-martino/.gradle/caches/8.13/transforms/158a54d6f1b0f733052a530799f65b44/transformed/room-runtime/AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/f9975fd61b1b687df6a275183a3b2d39/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/f9975fd61b1b687df6a275183a3b2d39/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/69d704271755ee30e80237b52733598c/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/69d704271755ee30e80237b52733598c/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+	android:extractNativeLibs
+		INJECTED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/d0a259e5a0ccb7c925e2e70c1304a3f1/transformed/core-1.17.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:12:9-35
+	android:label
+		ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:10:9-41
+	android:fullBackupContent
+		ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:8:9-54
+	android:roundIcon
+		ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:11:9-54
+	android:icon
+		ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:9:9-43
+	android:allowBackup
+		ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:13:9-51
+	android:dataExtractionRules
+		ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:7:9-65
+activity#com.example.mymoodtracker.MainActivity
+ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:14:9-22:20
+	android:exported
+		ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:16:13-36
+	android:theme
+		ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:17:13-55
+	android:name
+		ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:15:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:18:13-21:29
+action#android.intent.action.MAIN
+ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:19:17-69
+	android:name
+		ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:19:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:20:17-77
+	android:name
+		ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:20:27-74
+uses-permission#android.permission.INTERNET
+ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:24:5-26:40
+	tools:ignore
+		ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:26:9-37
+	android:name
+		ADDED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml:25:9-51
+uses-sdk
+INJECTED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml
+INJECTED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml
+MERGED from [androidx.navigation:navigation-runtime-android:2.9.6] /home/giada-de-martino/.gradle/caches/8.13/transforms/28d52509f92e21faafb9114dd319da47/transformed/navigation-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime-android:2.9.6] /home/giada-de-martino/.gradle/caches/8.13/transforms/28d52509f92e21faafb9114dd319da47/transformed/navigation-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common-android:2.9.6] /home/giada-de-martino/.gradle/caches/8.13/transforms/649945c911ee2d4daeb1eb003ee4865e/transformed/navigation-common-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common-android:2.9.6] /home/giada-de-martino/.gradle/caches/8.13/transforms/649945c911ee2d4daeb1eb003ee4865e/transformed/navigation-common-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-compose-android:2.9.6] /home/giada-de-martino/.gradle/caches/8.13/transforms/685d31a8fe972a8dd29fc426bf80be5f/transformed/navigation-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose-android:2.9.6] /home/giada-de-martino/.gradle/caches/8.13/transforms/685d31a8fe972a8dd29fc426bf80be5f/transformed/navigation-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose:2.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/004a6bcb28563ec7323a03fe2e61640f/transformed/coil-compose-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose:2.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/004a6bcb28563ec7323a03fe2e61640f/transformed/coil-compose-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose-base:2.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/265f706cb6b6802d5bc722a2923da7a4/transformed/coil-compose-base-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose-base:2.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/265f706cb6b6802d5bc722a2923da7a4/transformed/coil-compose-base-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material3:material3-android:1.3.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/b5493fe94d52ada13c676d6721312311/transformed/material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3-android:1.3.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/b5493fe94d52ada13c676d6721312311/transformed/material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/19cac296a6f2322264124aede80e054b/transformed/ui-tooling-data/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/19cac296a6f2322264124aede80e054b/transformed/ui-tooling-data/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/c75e275e6897e407b27794072250fcae/transformed/ui-tooling-preview/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/c75e275e6897e407b27794072250fcae/transformed/ui-tooling-preview/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/15e5c7def36fa074f772276f839ecf84/transformed/animation-core/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/15e5c7def36fa074f772276f839ecf84/transformed/animation-core/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/3c8505fa4eac5e7d49cd8ebdc9699252/transformed/ui-unit/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/3c8505fa4eac5e7d49cd8ebdc9699252/transformed/ui-unit/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/163a55de9bd5330524893d7ea11a2feb/transformed/ui-graphics/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/163a55de9bd5330524893d7ea11a2feb/transformed/ui-graphics/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/33eefbe04c8dbb5855fdf70c2257b848/transformed/ui-geometry/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/33eefbe04c8dbb5855fdf70c2257b848/transformed/ui-geometry/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/960b60d0f53de62a571ab3da3246ae6d/transformed/ui-text/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/960b60d0f53de62a571ab3da3246ae6d/transformed/ui-text/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/c72d725dbfd5ab9403872479fae04b59/transformed/ui-util/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/c72d725dbfd5ab9403872479fae04b59/transformed/ui-util/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/b6d29c0de2095518255a213830093348/transformed/ui-tooling/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/b6d29c0de2095518255a213830093348/transformed/ui-tooling/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-android:1.7.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/e141f0f737fe58afbf621da4ba8f3069/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.7.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/e141f0f737fe58afbf621da4ba8f3069/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.7.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/3faf2cdb2ae76d072129edcc73696f71/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.7.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/3faf2cdb2ae76d072129edcc73696f71/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/5eeb1c41ad520db6f0f27368d98626d1/transformed/animation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/5eeb1c41ad520db6f0f27368d98626d1/transformed/animation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/e404d84ac6c732c5aa7a34a96fc06e47/transformed/foundation-layout/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/e404d84ac6c732c5aa7a34a96fc06e47/transformed/foundation-layout/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/bdea385f18d4c6cd85f16cf83693530d/transformed/foundation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/bdea385f18d4c6cd85f16cf83693530d/transformed/foundation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigationevent:navigationevent-android:1.0.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/48304f358830d99d518ea8aded6bc0c5/transformed/navigationevent/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigationevent:navigationevent-android:1.0.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/48304f358830d99d518ea8aded6bc0c5/transformed/navigationevent/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigationevent:navigationevent-compose-android:1.0.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/951f8afc4c2929e4787eb931c10c45eb/transformed/navigationevent-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigationevent:navigationevent-compose-android:1.0.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/951f8afc4c2929e4787eb931c10c45eb/transformed/navigationevent-compose/AndroidManifest.xml:5:5-44
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/e9a1530e618e603b366b9927112263c1/transformed/accompanist-drawablepainter-0.32.0/AndroidManifest.xml:21:5-44
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/e9a1530e618e603b366b9927112263c1/transformed/accompanist-drawablepainter-0.32.0/AndroidManifest.xml:21:5-44
+MERGED from [io.coil-kt:coil:2.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/6640729ef6f9b23da2f975be6bc7c74a/transformed/coil-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil:2.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/6640729ef6f9b23da2f975be6bc7c74a/transformed/coil-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/0e230315156cae8664cfe8a5263d4d1e/transformed/coil-base-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/0e230315156cae8664cfe8a5263d4d1e/transformed/coil-base-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/5cb17fe68e24886a0a04e85ead7691ad/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/5cb17fe68e24886a0a04e85ead7691ad/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.autofill:autofill:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/8393d3ad48f64f024635eb406ca4c66f/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/8393d3ad48f64f024635eb406ca4c66f/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.6.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/111a0d75e0dcff8851fde50ca1f0998d/transformed/transition-1.6.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.transition:transition:1.6.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/111a0d75e0dcff8851fde50ca1f0998d/transformed/transition-1.6.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.window:window-core-android:1.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/91337e04368829e7a6e9d6c9544d6fec/transformed/window-core/AndroidManifest.xml:5:5-44
+MERGED from [androidx.window:window-core-android:1.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/91337e04368829e7a6e9d6c9544d6fec/transformed/window-core/AndroidManifest.xml:5:5-44
+MERGED from [androidx.window:window:1.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/56260f84a40b085f03cc9d5eb4cf4733/transformed/window-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.window:window:1.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/56260f84a40b085f03cc9d5eb4cf4733/transformed/window-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/023098b1a4feee7c7ff02cea65e41e8d/transformed/emoji2-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/023098b1a4feee7c7ff02cea65e41e8d/transformed/emoji2-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/1f616de582eaa65291247a2ac1ef208e/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/1f616de582eaa65291247a2ac1ef208e/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/c761a807de52e9cbd6197d818bc658fb/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/c761a807de52e9cbd6197d818bc658fb/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/3b4a7f8c6daeeee45478bca2fea7bace/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/3b4a7f8c6daeeee45478bca2fea7bace/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/517270fed9e1218d97fac884f74724d5/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/517270fed9e1218d97fac884f74724d5/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/30368f7b6f37b6f10812631acc6f2733/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/30368f7b6f37b6f10812631acc6f2733/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/018efa8097fa3cc4090b4f5504109717/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/018efa8097fa3cc4090b4f5504109717/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/d0a259e5a0ccb7c925e2e70c1304a3f1/transformed/core-1.17.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/d0a259e5a0ccb7c925e2e70c1304a3f1/transformed/core-1.17.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.12.2] /home/giada-de-martino/.gradle/caches/8.13/transforms/bfd6dc9caa46550ee1df940bf1ae6b87/transformed/activity-ktx-1.12.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.12.2] /home/giada-de-martino/.gradle/caches/8.13/transforms/bfd6dc9caa46550ee1df940bf1ae6b87/transformed/activity-ktx-1.12.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/1cc5e707a8358dc19d83fd96e878f456/transformed/lifecycle-livedata-core-ktx-2.10.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/1cc5e707a8358dc19d83fd96e878f456/transformed/lifecycle-livedata-core-ktx-2.10.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/b9a4e715e51e58305c8dad2daeac3553/transformed/lifecycle-livedata-2.10.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/b9a4e715e51e58305c8dad2daeac3553/transformed/lifecycle-livedata-2.10.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/25af402f4913fdba0e71c51f8a1a28a7/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/25af402f4913fdba0e71c51f8a1a28a7/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/60dbc2585b3cca20f371b68004e9dad3/transformed/lifecycle-viewmodel-ktx-2.10.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/60dbc2585b3cca20f371b68004e9dad3/transformed/lifecycle-viewmodel-ktx-2.10.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/e81b35671e4e271d9162774bfe59aed2/transformed/lifecycle-livedata-core-2.10.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/e81b35671e4e271d9162774bfe59aed2/transformed/lifecycle-livedata-core-2.10.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/c3f5ec094a729d6f0dc5c0fc6288554c/transformed/lifecycle-viewmodel-savedstate/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/c3f5ec094a729d6f0dc5c0fc6288554c/transformed/lifecycle-viewmodel-savedstate/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/4c3934b952f37b5b4080675b40ee0ab8/transformed/lifecycle-viewmodel-2.10.0/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/4c3934b952f37b5b4080675b40ee0ab8/transformed/lifecycle-viewmodel-2.10.0/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/8d2be6855b2c9c5142b19b852062cdcf/transformed/lifecycle-viewmodel/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/8d2be6855b2c9c5142b19b852062cdcf/transformed/lifecycle-viewmodel/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.runtime:runtime-retain-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/f7dd975fa7de6efaecc75644d575ad95/transformed/runtime-retain/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-retain-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/f7dd975fa7de6efaecc75644d575ad95/transformed/runtime-retain/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-annotation-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/b8674b85e6f5e795b5a069029036f8b7/transformed/runtime-annotation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-annotation-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/b8674b85e6f5e795b5a069029036f8b7/transformed/runtime-annotation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/fd082d764c630c9e0ecef15b3a5328ee/transformed/savedstate-ktx-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/fd082d764c630c9e0ecef15b3a5328ee/transformed/savedstate-ktx-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-android:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/0cb52c1e66f84682c2ba242e51ff4497/transformed/savedstate/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-android:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/0cb52c1e66f84682c2ba242e51ff4497/transformed/savedstate/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-compose-android:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/e41fc7153832f971c4f000d0e984c25e/transformed/savedstate-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-compose-android:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/e41fc7153832f971c4f000d0e984c25e/transformed/savedstate-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/c4bce1cca03f613ad824bd03eeb3b02e/transformed/runtime/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/c4bce1cca03f613ad824bd03eeb3b02e/transformed/runtime/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/07f3e77e0990f6cff5fa628881b76eae/transformed/runtime-saveable/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/07f3e77e0990f6cff5fa628881b76eae/transformed/runtime-saveable/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/66f67f8169151e8d5003cacb25f40bef/transformed/lifecycle-runtime-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/66f67f8169151e8d5003cacb25f40bef/transformed/lifecycle-runtime-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/5dff663673dda3acefe1bf875a8967da/transformed/lifecycle-runtime/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/5dff663673dda3acefe1bf875a8967da/transformed/lifecycle-runtime/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/46432a17bf30bcc5705c01cf360617a9/transformed/lifecycle-runtime-ktx/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/46432a17bf30bcc5705c01cf360617a9/transformed/lifecycle-runtime-ktx/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/a18956ccd6128f9d6aafdb20d907793b/transformed/lifecycle-viewmodel-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/a18956ccd6128f9d6aafdb20d907793b/transformed/lifecycle-viewmodel-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/7483e0a8efabf11e520ac568c2774904/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/7483e0a8efabf11e520ac568c2774904/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/9c4a6c7c206ec8a17a038b0872f2fdd1/transformed/ui/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/9c4a6c7c206ec8a17a038b0872f2fdd1/transformed/ui/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/9332c27e93126a4363be6ab2cf12f5ad/transformed/ui-test-manifest-1.10.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/9332c27e93126a4363be6ab2cf12f5ad/transformed/ui-test-manifest-1.10.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.12.2] /home/giada-de-martino/.gradle/caches/8.13/transforms/aef93eb011d9d6eef91639753a6c3695/transformed/activity-1.12.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.12.2] /home/giada-de-martino/.gradle/caches/8.13/transforms/aef93eb011d9d6eef91639753a6c3695/transformed/activity-1.12.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-compose:1.12.2] /home/giada-de-martino/.gradle/caches/8.13/transforms/a9cc37db01fc695cdde26d550c07b610/transformed/activity-compose-1.12.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.12.2] /home/giada-de-martino/.gradle/caches/8.13/transforms/a9cc37db01fc695cdde26d550c07b610/transformed/activity-compose-1.12.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/b9b2c84c469228bd7216e2e9f8f0b50e/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/b9b2c84c469228bd7216e2e9f8f0b50e/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/670d9c461b01710d5e7a231b00b3cf99/transformed/core-ktx-1.17.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/670d9c461b01710d5e7a231b00b3cf99/transformed/core-ktx-1.17.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.room:room-runtime-android:2.8.4] /home/giada-de-martino/.gradle/caches/8.13/transforms/158a54d6f1b0f733052a530799f65b44/transformed/room-runtime/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-runtime-android:2.8.4] /home/giada-de-martino/.gradle/caches/8.13/transforms/158a54d6f1b0f733052a530799f65b44/transformed/room-runtime/AndroidManifest.xml:21:5-44
+MERGED from [androidx.core:core-viewtree:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/77b5c08cf66d9892c4b8d32fa5900ee8/transformed/core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-viewtree:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/77b5c08cf66d9892c4b8d32fa5900ee8/transformed/core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/12a8964fcd64a48bf1ec8f92f67e0ed1/transformed/annotation-experimental-1.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/12a8964fcd64a48bf1ec8f92f67e0ed1/transformed/annotation-experimental-1.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/4af37c1ed353c33c4137dd791b64991c/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/4af37c1ed353c33c4137dd791b64991c/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/f9975fd61b1b687df6a275183a3b2d39/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/f9975fd61b1b687df6a275183a3b2d39/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.2.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/48d977dd2313c2914e29c331dd6f9ee5/transformed/tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.2.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/48d977dd2313c2914e29c331dd6f9ee5/transformed/tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/69d704271755ee30e80237b52733598c/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/69d704271755ee30e80237b52733598c/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/544559006e21793adfeade8648046362/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/544559006e21793adfeade8648046362/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework-android:2.6.2] /home/giada-de-martino/.gradle/caches/8.13/transforms/3d7bdc8f533c8d4e7f7b68a4d65d3a13/transformed/sqlite-framework/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework-android:2.6.2] /home/giada-de-martino/.gradle/caches/8.13/transforms/3d7bdc8f533c8d4e7f7b68a4d65d3a13/transformed/sqlite-framework/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-android:2.6.2] /home/giada-de-martino/.gradle/caches/8.13/transforms/2b16136b5cf37bf8f978ea789cf1c086/transformed/sqlite/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-android:2.6.2] /home/giada-de-martino/.gradle/caches/8.13/transforms/2b16136b5cf37bf8f978ea789cf1c086/transformed/sqlite/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /home/giada-de-martino/.gradle/caches/8.13/transforms/e2545aef2ea23253521d53af3ef1d6bc/transformed/exifinterface-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /home/giada-de-martino/.gradle/caches/8.13/transforms/e2545aef2ea23253521d53af3ef1d6bc/transformed/exifinterface-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/c155ee530a511ed96075616cc5ffee8c/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/c155ee530a511ed96075616cc5ffee8c/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/5d60875f771b2102bf814ff5c98299e2/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/5d60875f771b2102bf814ff5c98299e2/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/8f408ed1eebe4ca6daf84f6fae14a918/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/8f408ed1eebe4ca6daf84f6fae14a918/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+	android:targetSdkVersion
+		INJECTED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/giada-de-martino/Documents/Cours/SEMESTRE_9/DevMobile/dev-mobile-mood-tracker/app/src/main/AndroidManifest.xml
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/b6d29c0de2095518255a213830093348/transformed/ui-tooling/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/b6d29c0de2095518255a213830093348/transformed/ui-tooling/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/b6d29c0de2095518255a213830093348/transformed/ui-tooling/AndroidManifest.xml:24:13-71
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/56260f84a40b085f03cc9d5eb4cf4733/transformed/window-1.5.0/AndroidManifest.xml:23:9-25:40
+	android:required
+		ADDED from [androidx.window:window:1.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/56260f84a40b085f03cc9d5eb4cf4733/transformed/window-1.5.0/AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from [androidx.window:window:1.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/56260f84a40b085f03cc9d5eb4cf4733/transformed/window-1.5.0/AndroidManifest.xml:24:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/56260f84a40b085f03cc9d5eb4cf4733/transformed/window-1.5.0/AndroidManifest.xml:26:9-28:40
+	android:required
+		ADDED from [androidx.window:window:1.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/56260f84a40b085f03cc9d5eb4cf4733/transformed/window-1.5.0/AndroidManifest.xml:28:13-37
+	android:name
+		ADDED from [androidx.window:window:1.5.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/56260f84a40b085f03cc9d5eb4cf4733/transformed/window-1.5.0/AndroidManifest.xml:27:13-51
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/023098b1a4feee7c7ff02cea65e41e8d/transformed/emoji2-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/25af402f4913fdba0e71c51f8a1a28a7/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/25af402f4913fdba0e71c51f8a1a28a7/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/f9975fd61b1b687df6a275183a3b2d39/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/f9975fd61b1b687df6a275183a3b2d39/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/023098b1a4feee7c7ff02cea65e41e8d/transformed/emoji2-1.4.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/023098b1a4feee7c7ff02cea65e41e8d/transformed/emoji2-1.4.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/023098b1a4feee7c7ff02cea65e41e8d/transformed/emoji2-1.4.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/023098b1a4feee7c7ff02cea65e41e8d/transformed/emoji2-1.4.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/023098b1a4feee7c7ff02cea65e41e8d/transformed/emoji2-1.4.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/023098b1a4feee7c7ff02cea65e41e8d/transformed/emoji2-1.4.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/023098b1a4feee7c7ff02cea65e41e8d/transformed/emoji2-1.4.0/AndroidManifest.xml:30:17-75
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/d0a259e5a0ccb7c925e2e70c1304a3f1/transformed/core-1.17.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/d0a259e5a0ccb7c925e2e70c1304a3f1/transformed/core-1.17.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/d0a259e5a0ccb7c925e2e70c1304a3f1/transformed/core-1.17.0/AndroidManifest.xml:23:9-81
+permission#com.example.mymoodtracker.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/d0a259e5a0ccb7c925e2e70c1304a3f1/transformed/core-1.17.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/d0a259e5a0ccb7c925e2e70c1304a3f1/transformed/core-1.17.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/d0a259e5a0ccb7c925e2e70c1304a3f1/transformed/core-1.17.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/d0a259e5a0ccb7c925e2e70c1304a3f1/transformed/core-1.17.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/d0a259e5a0ccb7c925e2e70c1304a3f1/transformed/core-1.17.0/AndroidManifest.xml:26:22-94
+uses-permission#com.example.mymoodtracker.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/d0a259e5a0ccb7c925e2e70c1304a3f1/transformed/core-1.17.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.17.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/d0a259e5a0ccb7c925e2e70c1304a3f1/transformed/core-1.17.0/AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/25af402f4913fdba0e71c51f8a1a28a7/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/25af402f4913fdba0e71c51f8a1a28a7/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.10.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/25af402f4913fdba0e71c51f8a1a28a7/transformed/lifecycle-process-2.10.0/AndroidManifest.xml:30:17-78
+activity#androidx.activity.ComponentActivity
+ADDED from [androidx.compose.ui:ui-test-manifest:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/9332c27e93126a4363be6ab2cf12f5ad/transformed/ui-test-manifest-1.10.1/AndroidManifest.xml:23:9-26:79
+	android:exported
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/9332c27e93126a4363be6ab2cf12f5ad/transformed/ui-test-manifest-1.10.1/AndroidManifest.xml:25:13-36
+	android:theme
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/9332c27e93126a4363be6ab2cf12f5ad/transformed/ui-test-manifest-1.10.1/AndroidManifest.xml:26:13-76
+	android:name
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.10.1] /home/giada-de-martino/.gradle/caches/8.13/transforms/9332c27e93126a4363be6ab2cf12f5ad/transformed/ui-test-manifest-1.10.1/AndroidManifest.xml:24:13-63
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime-android:2.8.4] /home/giada-de-martino/.gradle/caches/8.13/transforms/158a54d6f1b0f733052a530799f65b44/transformed/room-runtime/AndroidManifest.xml:24:9-28:63
+	android:exported
+		ADDED from [androidx.room:room-runtime-android:2.8.4] /home/giada-de-martino/.gradle/caches/8.13/transforms/158a54d6f1b0f733052a530799f65b44/transformed/room-runtime/AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.room:room-runtime-android:2.8.4] /home/giada-de-martino/.gradle/caches/8.13/transforms/158a54d6f1b0f733052a530799f65b44/transformed/room-runtime/AndroidManifest.xml:28:13-60
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime-android:2.8.4] /home/giada-de-martino/.gradle/caches/8.13/transforms/158a54d6f1b0f733052a530799f65b44/transformed/room-runtime/AndroidManifest.xml:26:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime-android:2.8.4] /home/giada-de-martino/.gradle/caches/8.13/transforms/158a54d6f1b0f733052a530799f65b44/transformed/room-runtime/AndroidManifest.xml:25:13-74
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/giada-de-martino/.gradle/caches/8.13/transforms/eacd480e85003aca4d56b4d4854341c0/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
