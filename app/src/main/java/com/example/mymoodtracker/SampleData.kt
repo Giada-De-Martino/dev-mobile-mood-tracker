@@ -15,7 +15,10 @@ object SampleData {
     val day6 = DailyMood(20260107, 5)
     val day7 = DailyMood(20260106, 3)
     val day8 = DailyMood(20260105, 4)
+    val day9 = DailyMood(20260113, 0)
+    val day10 = DailyMood(20260114, 0)
+    val day11 = DailyMood(20260115, 0)
 
 
-    val moodList: List<DailyMood> = mutableListOf(day8, day7, day6, day5, day4, day3, day2, day1)
+    val moodList: List<DailyMood> = mutableListOf(day8, day7, day6, day5, day4, day3, day2, day1, day9, day10, day11)
 }

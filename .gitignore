@@ -1,3 +1,38 @@
-# .gitignore
+# Gradle
 .gradle/
+app/build/
+*/build/
+
+# Local configuration
+local.properties
+*.iml
 .idea/
+
+# Log files
+*.log
+
+# Android Studio specific
+captures/
+.externalNativeBuild/
+
+# Kotlin/Java caches
+**/kotlin-classes/
+**/kotlin-compile/
+**/kspCaches/
+
+# Generated APKs / dex files
+*.apk
+*.ap_
+*.dex
+.kotlin
+
+# Misc
+.DS_Store
+*.class
+
+# Optional: ignore Proguard outputs
+*.mapping
+*.jar
+
+# Optional: ignore Jetpack Compose previews
+*.kotlin_module

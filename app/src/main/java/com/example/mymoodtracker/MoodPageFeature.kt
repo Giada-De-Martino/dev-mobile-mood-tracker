@@ -2,6 +2,7 @@ package com.example.mymoodtracker
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -25,6 +26,7 @@ import java.util.Locale
 data class MoodOption(val label: String, val color: Color)
 
 val moodOptions = listOf(
+    MoodOption("", Color(0xFFF5F5F5)),              // Light grey
     MoodOption("Sad", Color(0xFF1E81B0)),           // Red-ish
     MoodOption("A bit down", Color(0xFF4DA8DA)),    // Orange
     MoodOption("Quiet day", Color(0xFF90C3D4)),     // Yellow
@@ -51,7 +53,7 @@ fun FirstPage(db: AppDatabase){
     ) {
         GraphScreen(moods, {moods = it}, db)
         Spacer(Modifier.height(10.dp))
-        MoodList(moods)
+        MoodList(moods, db, {moods = it})
     }
 }
 
@@ -115,7 +117,7 @@ fun GraphScreen(
                 title = { Text("How are you feeling today?") },
                 text = {
                     Column {
-                        moodOptions.forEach { mood ->
+                        moodOptions.drop(1).forEach { mood ->
                             Button(
                                 colors = ButtonDefaults.buttonColors(containerColor = mood.color),
                                 modifier = Modifier
@@ -180,71 +182,85 @@ fun GraphLine(data: List<DailyMood>) {
             drawLine(lineColor, Offset(0f, y), Offset(size.maxDimension, y), 1f)
         }
 
-        // Background bars
+        // Background rounded bars
         data.forEachIndexed { i, mood ->
-            val x = i * stepX + stepX / 2
-            val barHeight = ((mood.value - minValue) / (maxValue - minValue)) * size.height
-            val barColor = moodOptions[mood.value - 1].color
+            if (mood.value > 0) {
+                val x = i * stepX + stepX / 2
+                val barHeight = ((mood.value -1 - minValue) / (maxValue - minValue)) * size.height
+                val barColor = moodOptions[mood.value - 1].color
 
-            drawRect(
-                color = barColor,
-                topLeft = Offset(x - stepX / 4, size.height - barHeight),
-                size = androidx.compose.ui.geometry.Size(stepX / 2, barHeight)
-            )
+                drawRect(
+                    color = barColor,
+                    topLeft = Offset(x - stepX / 4, size.height - barHeight),
+                    size = androidx.compose.ui.geometry.Size(stepX / 2, barHeight)
+                )
 
-            drawArc(
-                color = barColor,
-                startAngle = 180f,    // start at left
-                sweepAngle = 180f,    // sweep half circle
-                useCenter = true,     // fill the shape
-                topLeft = Offset(x - stepX / 4, size.height - barHeight - stepX / 4),
-                size = androidx.compose.ui.geometry.Size(stepX/2, stepX/2)
-            )
-        }
-
-        // Lines
-        for (i in 0 until data.size - 1) {
-            val x1 = i * stepX + stepX / 2
-            val x2 = (i + 1) * stepX + stepX / 2
-
-            val y1 = size.height - ((data[i].value - minValue) / (maxValue - minValue)) * size.height
-            val y2 = size.height - ((data[i + 1].value - minValue) / (maxValue - minValue)) * size.height
-
-            drawLine(lineColor, Offset(x1, y1), Offset(x2, y2), 6f)
-        }
-
-        // Points + dates
-        data.forEachIndexed { i, mood ->
-            val x = i * stepX + stepX / 2
-            val y = size.height - ((mood.value - minValue) / (maxValue - minValue)) * size.height
-
-            val calendar = Calendar.getInstance().apply {
-                set(
-                    (mood.date / 10000).toInt(),
-                    ((mood.date % 10000) / 100 - 1).toInt(),
-                    (mood.date % 100).toInt()
+                drawArc(
+                    color = barColor,
+                    startAngle = 180f,
+                    sweepAngle = 180f,
+                    useCenter = true,
+                    topLeft = Offset(x - stepX / 4, size.height - barHeight - stepX / 4),
+                    size = androidx.compose.ui.geometry.Size(stepX / 2, stepX / 2)
                 )
             }
+        }
 
-            drawCircle(lineColor, 10f, Offset(x, y))
+        // Lines: connect only non-zero points
+        var previousValidIndex: Int? = null
+        data.forEachIndexed { i, mood ->
+            if (mood.value > 0) {
+                if (previousValidIndex != null) {
+                    val prev = previousValidIndex
+                    val x1 = prev * stepX + stepX / 2
+                    val x2 = i * stepX + stepX / 2
+                    val y1 = size.height - ((data[prev].value -1 - minValue) / (maxValue - minValue)) * size.height
+                    val y2 = size.height - ((mood.value -1 - minValue) / (maxValue - minValue)) * size.height
 
-            drawContext.canvas.nativeCanvas.drawText(
-                sdf.format(calendar.time),
-                x,
-                size.height + 30f,
-                android.graphics.Paint().apply {
-                    color = textColor.hashCode()
-                    textSize = 30f
-                    textAlign = android.graphics.Paint.Align.CENTER
+                    drawLine(lineColor, Offset(x1, y1), Offset(x2, y2), 6f)
                 }
-            )
+                previousValidIndex = i
+            }
+        }
+
+        // Points + dates: draw only non-zero moods
+        data.forEachIndexed { i, mood ->
+            val x = i * stepX + stepX / 2
+            if (mood.value > 0) {
+                val y = size.height - ((mood.value - 1 - minValue) / (maxValue - minValue)) * size.height
+
+                val calendar = Calendar.getInstance().apply {
+                    set(
+                        (mood.date / 10000).toInt(),
+                        ((mood.date % 10000) / 100 - 1).toInt(),
+                        (mood.date % 100).toInt()
+                    )
+                }
+
+                drawCircle(lineColor, 10f, Offset(x, y))
+
+                drawContext.canvas.nativeCanvas.drawText(
+                    sdf.format(calendar.time),
+                    x,
+                    size.height + 30f,
+                    android.graphics.Paint().apply {
+                        color = textColor.hashCode()
+                        textSize = 30f
+                        textAlign = android.graphics.Paint.Align.CENTER
+                    }
+                )
+            } else {
+                // Optional: draw a small empty marker (or skip entirely)
+            }
         }
     }
 }
-
 @Composable
-fun MoodList(moods: List<DailyMood>) {
-
+fun MoodList(
+    moods: List<DailyMood>,
+    db: AppDatabase,
+    onMoodsUpdated: (List<DailyMood>) -> Unit
+) {
     if (moods.isEmpty()) {
         Text(
             text = "No moods recorded yet.",
@@ -254,12 +270,16 @@ fun MoodList(moods: List<DailyMood>) {
         return
     }
 
+    var selectedMood by remember { mutableStateOf<DailyMood?>(null) }
+    var showDialog by remember { mutableStateOf(false) }
+    val scope = rememberCoroutineScope()
+
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .background(
                 color = MaterialTheme.colorScheme.secondaryContainer,
-                shape = RoundedCornerShape(15.dp) // rounded corners
+                shape = RoundedCornerShape(15.dp)
             )
     ) {
         Column(
@@ -272,12 +292,17 @@ fun MoodList(moods: List<DailyMood>) {
             moods
                 .sortedByDescending { it.date } // latest first
                 .forEach { mood ->
-                    val moodOption = moodOptions[mood.value - 1]
+                    val moodOption = if (mood.value > 0) moodOptions[mood.value - 1]
+                    else MoodOption("No data", Color.Transparent)
 
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(vertical = 5.dp),
+                            .padding(vertical = 5.dp)
+                            .clickable {
+                                selectedMood = mood
+                                showDialog = true
+                            },
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Box(
@@ -297,5 +322,40 @@ fun MoodList(moods: List<DailyMood>) {
                     }
                 }
         }
+    }
+
+    // Dialog to change mood for selected day
+    if (showDialog && selectedMood != null) {
+        AlertDialog(
+            onDismissRequest = { showDialog = false },
+            title = { Text("Change mood for ${getDayString(selectedMood!!.date)}") },
+            text = {
+                Column {
+                    moodOptions.drop(1).forEach { moodOption ->
+                        Button(
+                            colors = ButtonDefaults.buttonColors(containerColor = moodOption.color),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(vertical = 4.dp),
+                            onClick = {
+                                showDialog = false
+                                val newValue = moodOptions.indexOf(moodOption) + 1
+                                scope.launch(Dispatchers.IO) {
+                                    db.dailyMoodDao().insert(DailyMood(selectedMood!!.date, newValue))
+                                    val updated = db.dailyMoodDao().getAll()
+                                    withContext(Dispatchers.Main) {
+                                        onMoodsUpdated(updated)
+                                    }
+                                }
+                            }
+                        ) {
+                            Text(moodOption.label)
+                        }
+                    }
+                }
+            },
+            confirmButton = {},
+            dismissButton = {}
+        )
     }
 }

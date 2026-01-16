@@ -81,3 +81,12 @@ fun getDayString(date: Long): String {
 
     return "%04d/%02d/%02d".format(year, month, day)
 }
+
+suspend fun AppDatabase.setUpDailyMood() {
+    val dao = dailyMoodDao()
+    val today = getTodayInt()
+    val exists = dao.getAll().any { it.date == today }
+    if (!exists) {
+        dao.insert(DailyMood(today, 0))
+    }
+}
