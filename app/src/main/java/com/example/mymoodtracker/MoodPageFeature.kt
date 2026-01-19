@@ -43,9 +43,10 @@ fun FirstPage(db: AppDatabase){
     val context = LocalContext.current
 
     LaunchedEffect(Unit) {
-        scheduleReminder(context, "Mood Tracker", "Don't forget to record your mood today 🌤️", 15)
-        scheduleReminder(context, "Diary Reminder", "Take a moment to write your diary entry ✍️", 15)
-        sendTestNotificationNow(context)
+        scheduleDailyReminder(context, "Mood Tracker", "Don't forget to record your mood today 🌤️", 14, 40)
+        scheduleDailyReminder(context, "Diary Reminder", "Take a moment to write your diary entry ✍️", 14, 42)
+        /** TO TEST
+         * sendTestNotificationNow(context) */
         Log.d("FirstPage", "Notifications scheduled")
     }
 
