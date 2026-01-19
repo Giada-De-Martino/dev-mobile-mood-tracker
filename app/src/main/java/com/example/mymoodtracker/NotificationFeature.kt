@@ -51,44 +51,18 @@ class NotificationWorker(
     }
 }
 
-fun scheduleDailyMoodReminder(context: Context) {
+fun scheduleReminder(context: Context, title: String, message: String, delay: Long) {
     val data = Data.Builder()
-        .putString("title", "Mood Tracker")
-        .putString("message", "Don't forget to record your mood today 🌤️")
+        .putString("title", title)
+        .putString("message", message)
         .build()
 
-    val request = PeriodicWorkRequestBuilder<NotificationWorker>(
-    15, TimeUnit.MINUTES
-    )
+    val request = OneTimeWorkRequestBuilder<NotificationWorker>()
+        .setInitialDelay(delay, TimeUnit.MINUTES)
         .setInputData(data)
-        .addTag("daily_mood_reminder")
         .build()
 
-    WorkManager.getInstance(context).enqueueUniquePeriodicWork(
-        "daily_mood_reminder",
-        ExistingPeriodicWorkPolicy.UPDATE,
-        request
-    )
-}
-
-fun scheduleDailyDiaryReminder(context: Context) {
-    val data = Data.Builder()
-        .putString("title", "Diary Reminder")
-        .putString("message", "Take a moment to write your diary entry ✍️")
-        .build()
-
-    val request = PeriodicWorkRequestBuilder<NotificationWorker>(
-        15, TimeUnit.MINUTES
-    )
-        .setInputData(data)
-        .addTag("daily_diary_reminder")
-        .build()
-
-    WorkManager.getInstance(context).enqueueUniquePeriodicWork(
-        "daily_diary_reminder",
-        ExistingPeriodicWorkPolicy.UPDATE,
-        request
-    )
+    WorkManager.getInstance(context).enqueue(request)
 }
 
 fun sendTestNotificationNow(context: Context) {

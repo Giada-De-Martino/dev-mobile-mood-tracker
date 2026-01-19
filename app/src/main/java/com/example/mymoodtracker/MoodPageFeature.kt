@@ -43,8 +43,8 @@ fun FirstPage(db: AppDatabase){
     val context = LocalContext.current
 
     LaunchedEffect(Unit) {
-        scheduleDailyMoodReminder(context)
-        scheduleDailyDiaryReminder(context)
+        scheduleReminder(context, "Mood Tracker", "Don't forget to record your mood today 🌤️", 15)
+        scheduleReminder(context, "Diary Reminder", "Take a moment to write your diary entry ✍️", 15)
         sendTestNotificationNow(context)
         Log.d("FirstPage", "Notifications scheduled")
     }
@@ -340,7 +340,7 @@ fun MoodList(
     // Dialog to change mood for selected day
     if (showDialog && selectedMood != null) {
         AlertDialog(
-            onDismissRequest = { showDialog = false },
+            onDismissRequest = { },
             title = { Text("Change mood for ${getDayString(selectedMood!!.date)}") },
             text = {
                 Column {
@@ -351,7 +351,6 @@ fun MoodList(
                                 .fillMaxWidth()
                                 .padding(vertical = 4.dp),
                             onClick = {
-                                showDialog = false
                                 val newValue = moodOptions.indexOf(moodOption)
                                 scope.launch(Dispatchers.IO) {
                                     db.dailyMoodDao().updateMood(selectedMood!!.date, newValue)

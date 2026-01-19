@@ -5,6 +5,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -17,13 +18,13 @@ import java.util.Date
 
 @Composable
 fun DiaryPageFeature(db: AppDatabase) {
-
     val scope = rememberCoroutineScope()
+    val lazyListState = rememberLazyListState()
     val today = getDayInt(Date())
 
     var diaryText by remember { mutableStateOf(TextFieldValue("")) }
     var selectedDate by remember { mutableLongStateOf(today) }
-    var entries: List<DailyMood> by remember { mutableStateOf<List<DailyMood>>(emptyList()) }
+    var entries: List<DailyMood> by remember { mutableStateOf(emptyList()) }
 
     LaunchedEffect(Unit) {
         entries = db.dailyMoodDao().getAll()
@@ -54,6 +55,9 @@ fun DiaryPageFeature(db: AppDatabase) {
             TextButton(
                 onClick = {
                     selectedDate = today
+                    scope.launch {
+                        lazyListState.animateScrollToItem(0)
+                    }
                 }
             ) {
                 Text("New Entry")
@@ -104,6 +108,7 @@ fun DiaryPageFeature(db: AppDatabase) {
         Spacer(modifier = Modifier.height(8.dp))
 
         LazyColumn(
+            state = lazyListState,
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(1f)

@@ -1,6 +1,5 @@
 package com.example.mymoodtracker
 
-import android.content.Context
 import androidx.room.ColumnInfo
 import androidx.room.Dao
 import androidx.room.Database
@@ -10,7 +9,6 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.PrimaryKey
 import androidx.room.Query
-import androidx.room.Room
 import androidx.room.RoomDatabase
 import java.util.*
 
@@ -51,26 +49,9 @@ interface DailyMoodDao {
 }
 
 // All Databases --------------------------------------------------------------
-@Database(entities = [DailyMood::class], version = 3, exportSchema = false)
+@Database(entities = [DailyMood::class], version = 4, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun dailyMoodDao(): DailyMoodDao
-
-    companion object {
-        @Volatile
-        private var INSTANCE: AppDatabase? = null
-
-        fun getInstance(context: Context): AppDatabase {
-            return INSTANCE ?: synchronized(this) {
-                val instance = Room.databaseBuilder(
-                    context.applicationContext,
-                    AppDatabase::class.java,
-                    "mood_db"
-                ).build()
-                INSTANCE = instance
-                instance
-            }
-        }
-    }
 }
 
 
