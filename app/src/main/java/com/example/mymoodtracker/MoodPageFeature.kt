@@ -1,5 +1,7 @@
 package com.example.mymoodtracker
 
+import SetupDailyMoodReminder
+import android.util.Log
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -21,12 +23,13 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.text.SimpleDateFormat
 import java.util.Calendar
+import java.util.Date
 import java.util.Locale
 
 data class MoodOption(val label: String, val color: Color)
 
 val moodOptions = listOf(
-    MoodOption("", Color(0xFFF5F5F5)),              // Light grey
+    MoodOption("No data", Color(0xFFF5F5F5)),       // Light grey
     MoodOption("Sad", Color(0xFF1E81B0)),           // Red-ish
     MoodOption("A bit down", Color(0xFF4DA8DA)),    // Orange
     MoodOption("Quiet day", Color(0xFF90C3D4)),     // Yellow
@@ -36,13 +39,17 @@ val moodOptions = listOf(
 
 @Composable
 fun FirstPage(db: AppDatabase){
+    /** WORKER NOTIFICATION CALL */
+    SetupDailyMoodReminder()
+
     var moods by remember { mutableStateOf<List<DailyMood>>(emptyList()) }
     val scrollState = rememberScrollState()
 
     LaunchedEffect(Unit) {
-        moods = withContext(Dispatchers.IO) {
-            db.dailyMoodDao().getAll()
-        }
+        // db.dailyMoodDao().insert(SampleData.startday) // TO TEST
+
+        setUpDailyMood(db)
+        moods = db.dailyMoodDao().getAll()
         scrollState.scrollTo(scrollState.maxValue)
     }
 
@@ -127,8 +134,9 @@ fun GraphScreen(
                                     showDialog = false
 
                                     scope.launch(Dispatchers.IO) {
+                                        Log.d("MOOD", "MOOD = " + moodOptions.indexOf(mood))
                                         db.dailyMoodDao().insert(
-                                            DailyMood(getTodayInt(), moodOptions.indexOf(mood) + 1)
+                                            DailyMood(getDayInt(Date()), moodOptions.indexOf(mood))
                                         )
 
                                         val updated = db.dailyMoodDao().getAll()
@@ -186,8 +194,8 @@ fun GraphLine(data: List<DailyMood>) {
         data.forEachIndexed { i, mood ->
             if (mood.value > 0) {
                 val x = i * stepX + stepX / 2
-                val barHeight = ((mood.value -1 - minValue) / (maxValue - minValue)) * size.height
-                val barColor = moodOptions[mood.value - 1].color
+                val barHeight = ((mood.value - minValue) / (maxValue - minValue)) * size.height
+                val barColor = moodOptions[mood.value].color
 
                 drawRect(
                     color = barColor,
@@ -214,8 +222,8 @@ fun GraphLine(data: List<DailyMood>) {
                     val prev = previousValidIndex
                     val x1 = prev * stepX + stepX / 2
                     val x2 = i * stepX + stepX / 2
-                    val y1 = size.height - ((data[prev].value -1 - minValue) / (maxValue - minValue)) * size.height
-                    val y2 = size.height - ((mood.value -1 - minValue) / (maxValue - minValue)) * size.height
+                    val y1 = size.height - ((data[prev].value - minValue) / (maxValue - minValue)) * size.height
+                    val y2 = size.height - ((mood.value - minValue) / (maxValue - minValue)) * size.height
 
                     drawLine(lineColor, Offset(x1, y1), Offset(x2, y2), 6f)
                 }
@@ -227,7 +235,7 @@ fun GraphLine(data: List<DailyMood>) {
         data.forEachIndexed { i, mood ->
             val x = i * stepX + stepX / 2
             if (mood.value > 0) {
-                val y = size.height - ((mood.value - 1 - minValue) / (maxValue - minValue)) * size.height
+                val y = size.height - ((mood.value - minValue) / (maxValue - minValue)) * size.height
 
                 val calendar = Calendar.getInstance().apply {
                     set(
@@ -292,8 +300,7 @@ fun MoodList(
             moods
                 .sortedByDescending { it.date } // latest first
                 .forEach { mood ->
-                    val moodOption = if (mood.value > 0) moodOptions[mood.value - 1]
-                    else MoodOption("No data", Color.Transparent)
+                    val moodOption = moodOptions[mood.value]
 
                     Row(
                         modifier = Modifier
@@ -339,7 +346,7 @@ fun MoodList(
                                 .padding(vertical = 4.dp),
                             onClick = {
                                 showDialog = false
-                                val newValue = moodOptions.indexOf(moodOption) + 1
+                                val newValue = moodOptions.indexOf(moodOption)
                                 scope.launch(Dispatchers.IO) {
                                     db.dailyMoodDao().insert(DailyMood(selectedMood!!.date, newValue))
                                     val updated = db.dailyMoodDao().getAll()

@@ -1,10 +1,13 @@
 package com.example.mymoodtracker
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
@@ -31,7 +34,7 @@ fun EmergencyPage() {
     ) {
 
         Text(
-            text = "Emergency Comfort 🧸",
+            text = "Emergency Comfort",
             style = MaterialTheme.typography.headlineMedium
         )
 
@@ -72,7 +75,17 @@ fun EmergencyPage() {
                 }
             }
         ) {
-            Text("Show me cute animals 🐶")
+            Row(horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically) {
+                Text("Show me cute animals",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onPrimary)
+                Spacer(modifier = Modifier.width(8.dp)) // space between text and icon
+                Icon(
+                    imageVector = Icons.Default.FavoriteBorder,
+                    contentDescription = "Favorite",
+                    tint = MaterialTheme.colorScheme.onPrimary
+                )
+            }
         }
 
     }

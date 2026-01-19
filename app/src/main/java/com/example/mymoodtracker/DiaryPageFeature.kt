@@ -12,13 +12,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
+import java.util.Date
 
 
 @Composable
 fun DiaryPageFeature(db: AppDatabase) {
 
     val scope = rememberCoroutineScope()
-    val today = getTodayInt()
+    val today = getDayInt(Date())
 
     var diaryText by remember { mutableStateOf(TextFieldValue("")) }
     var selectedDate by remember { mutableLongStateOf(today) }
