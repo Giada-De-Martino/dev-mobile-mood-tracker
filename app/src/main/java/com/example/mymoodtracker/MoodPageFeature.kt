@@ -1,5 +1,6 @@
 package com.example.mymoodtracker
 
+import android.util.Log
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -17,8 +18,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -40,17 +39,23 @@ val moodOptions = listOf(
 
 @Composable
 fun FirstPage(db: AppDatabase){
+    /** TO SEND NOTIFICATIONS */
     val context = LocalContext.current
+
+    LaunchedEffect(Unit) {
+        scheduleDailyMoodReminder(context)
+        scheduleDailyDiaryReminder(context)
+        sendTestNotificationNow(context)
+        Log.d("FirstPage", "Notifications scheduled")
+    }
+
+    /** TO GET ALL THE DATA */
     var moods by remember { mutableStateOf<List<DailyMood>>(emptyList()) }
     val scrollState = rememberScrollState()
 
     LaunchedEffect(Unit) {
         /** TO TEST */
         db.dailyMoodDao().insertAll(SampleData.moodList)
-
-        /** WORKER NOTIFICATION CALL */
-        val testRequest = OneTimeWorkRequestBuilder<NotificationWorker>().build()
-        WorkManager.getInstance(context).enqueue(testRequest)
 
         setUpDailyMood(db)
         moods = db.dailyMoodDao().getAll()
