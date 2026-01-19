@@ -46,7 +46,8 @@ fun FirstPage(db: AppDatabase){
     val scrollState = rememberScrollState()
 
     LaunchedEffect(Unit) {
-        // db.dailyMoodDao().insert(SampleData.startday) // TO TEST
+        // TO TEST
+        db.dailyMoodDao().insertAll(SampleData.moodList)
 
         setUpDailyMood(db)
         moods = db.dailyMoodDao().getAll()
@@ -134,10 +135,7 @@ fun GraphScreen(
                                     showDialog = false
 
                                     scope.launch(Dispatchers.IO) {
-                                        Log.d("MOOD", "MOOD = " + moodOptions.indexOf(mood))
-                                        db.dailyMoodDao().insert(
-                                            DailyMood(getDayInt(Date()), moodOptions.indexOf(mood))
-                                        )
+                                        db.dailyMoodDao().updateMood(getDayInt(Date()), moodOptions.indexOf(mood))
 
                                         val updated = db.dailyMoodDao().getAll()
                                         withContext(Dispatchers.Main) {
@@ -234,32 +232,30 @@ fun GraphLine(data: List<DailyMood>) {
         // Points + dates: draw only non-zero moods
         data.forEachIndexed { i, mood ->
             val x = i * stepX + stepX / 2
+
+            val calendar = Calendar.getInstance().apply {
+                set(
+                    (mood.date / 10000).toInt(),
+                    ((mood.date % 10000) / 100 - 1).toInt(),
+                    (mood.date % 100).toInt()
+                )
+            }
+
             if (mood.value > 0) {
                 val y = size.height - ((mood.value - minValue) / (maxValue - minValue)) * size.height
-
-                val calendar = Calendar.getInstance().apply {
-                    set(
-                        (mood.date / 10000).toInt(),
-                        ((mood.date % 10000) / 100 - 1).toInt(),
-                        (mood.date % 100).toInt()
-                    )
-                }
-
                 drawCircle(lineColor, 10f, Offset(x, y))
-
-                drawContext.canvas.nativeCanvas.drawText(
-                    sdf.format(calendar.time),
-                    x,
-                    size.height + 30f,
-                    android.graphics.Paint().apply {
-                        color = textColor.hashCode()
-                        textSize = 30f
-                        textAlign = android.graphics.Paint.Align.CENTER
-                    }
-                )
-            } else {
-                // Optional: draw a small empty marker (or skip entirely)
             }
+
+            drawContext.canvas.nativeCanvas.drawText(
+                sdf.format(calendar.time),
+                x,
+                size.height + 30f,
+                android.graphics.Paint().apply {
+                    color = textColor.hashCode()
+                    textSize = 30f
+                    textAlign = android.graphics.Paint.Align.CENTER
+                }
+            )
         }
     }
 }
@@ -348,7 +344,7 @@ fun MoodList(
                                 showDialog = false
                                 val newValue = moodOptions.indexOf(moodOption)
                                 scope.launch(Dispatchers.IO) {
-                                    db.dailyMoodDao().insert(DailyMood(selectedMood!!.date, newValue))
+                                    db.dailyMoodDao().updateMood(selectedMood!!.date, newValue)
                                     val updated = db.dailyMoodDao().getAll()
                                     withContext(Dispatchers.Main) {
                                         onMoodsUpdated(updated)

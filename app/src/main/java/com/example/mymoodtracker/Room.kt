@@ -19,7 +19,8 @@ import java.util.*
 @Entity
 data class DailyMood(
     @PrimaryKey val date: Long,
-    @ColumnInfo(name = "value") val value: Int = 0
+    @ColumnInfo(name = "value") val value: Int = 0,
+    @ColumnInfo(name = "content") val content: String = "",
 )
 
 @Dao
@@ -28,10 +29,19 @@ interface DailyMoodDao {
     suspend fun getAll(): List<DailyMood>
 
     @Query("SELECT * FROM DailyMood ORDER BY date ASC LIMIT 1")
-    suspend fun getFirstDay(): DailyMood?
+    suspend fun getFirstDay(): DailyMood
+
+    @Query("SELECT * FROM DailyMood WHERE date = :date")
+    suspend fun getByDate(date: Long): DailyMood
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(dailyMood: DailyMood)
+
+    @Query("UPDATE DailyMood SET value = :value WHERE date = :date")
+    suspend fun updateMood(date: Long, value: Int)
+
+    @Query("UPDATE DailyMood SET content = :content WHERE date = :date")
+    suspend fun updateContent(date: Long, content: String)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(dailyMoods: List<DailyMood>)
@@ -47,23 +57,10 @@ data class DiaryEntry(
     @ColumnInfo(name = "content") val content: String
 )
 
-@Dao
-interface DiaryEntryDao {
-    @Query("SELECT * FROM DiaryEntry WHERE date = :date LIMIT 1")
-    suspend fun getByDate(date: Long): DiaryEntry?
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(entry: DiaryEntry)
-
-    @Query("SELECT * FROM DiaryEntry ORDER BY date DESC")
-    suspend fun getAll(): List<DiaryEntry>
-}
-
 // All Databases --------------------------------------------------------------
-@Database(entities = [DailyMood::class, DiaryEntry::class], version = 3, exportSchema = false)
+@Database(entities = [DailyMood::class], version = 3, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun dailyMoodDao(): DailyMoodDao
-    abstract fun diaryEntryDao(): DiaryEntryDao
 
     companion object {
         @Volatile

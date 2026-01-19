@@ -7,12 +7,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.core.app.NotificationCompat
 import androidx.work.CoroutineWorker
 import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import com.example.mymoodtracker.R
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import java.util.concurrent.TimeUnit
 import com.example.mymoodtracker.AppDatabase
 import com.example.mymoodtracker.getDayInt
@@ -25,23 +24,22 @@ class NotificationWorker(
 
     private val db = AppDatabase.getInstance(context) // your Room DB
 
-    override suspend fun doWork(): Result = withContext(Dispatchers.IO) {
-        val today = getDayInt(Date()) // yyyyMMdd as Int
+    override suspend fun doWork(): Result {
+        val today = getDayInt(Date())
         val moods = db.dailyMoodDao().getAll()
         val todayMood = moods.find { it.date == today }
 
-        if (todayMood == null) {
-            sendNotification(
-                "Mood Tracker",
-                "You haven't recorded your mood today!"
-            )
-        } else {
-            sendNotification(
-                "Testing",
-                "This is a test notification"
-            )
+        if (todayMood?.value == 0) {
+            sendNotification("Mood Tracker", "You haven't recorded your mood today!")
         }
-        Result.success()
+
+        if (todayMood?.content == "") {
+            sendNotification("Mood Tracker", "You haven't written a diary entry today!")
+        }
+
+        // TO TEST
+        sendNotification("Testing", "This is a test notification")
+        return Result.success()
     }
 
     private fun sendNotification(title: String, message: String) {
@@ -68,7 +66,13 @@ fun SetupDailyMoodReminder() {
     val context = LocalContext.current
     LaunchedEffect(Unit) {
         val workManager = WorkManager.getInstance(context)
-        val dailyWorkRequest = PeriodicWorkRequestBuilder<NotificationWorker>(10, TimeUnit.SECONDS)
+
+        // TO TEST
+        val testRequest = OneTimeWorkRequestBuilder<NotificationWorker>()
+            .build()
+        workManager.enqueue(testRequest)
+
+        val dailyWorkRequest = PeriodicWorkRequestBuilder<NotificationWorker>(15, TimeUnit.MINUTES)
             .addTag("daily_mood_reminder")
             .build()
 

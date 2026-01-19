@@ -23,15 +23,15 @@ fun DiaryPageFeature(db: AppDatabase) {
 
     var diaryText by remember { mutableStateOf(TextFieldValue("")) }
     var selectedDate by remember { mutableLongStateOf(today) }
-    var entries by remember { mutableStateOf<List<DiaryEntry>>(emptyList()) }
+    var entries: List<DailyMood> by remember { mutableStateOf<List<DailyMood>>(emptyList()) }
 
     LaunchedEffect(Unit) {
-        entries = db.diaryEntryDao().getAll()
+        entries = db.dailyMoodDao().getAll()
     }
 
     LaunchedEffect(selectedDate) {
-        val entry = db.diaryEntryDao().getByDate(selectedDate)
-        diaryText = TextFieldValue(entry?.content ?: "")
+        val entry = db.dailyMoodDao().getByDate(selectedDate)
+        diaryText = TextFieldValue(entry.content)
     }
 
     Column(
@@ -83,13 +83,8 @@ fun DiaryPageFeature(db: AppDatabase) {
         Button(
             onClick = {
                 scope.launch {
-                    db.diaryEntryDao().insert(
-                        DiaryEntry(
-                            date = selectedDate,
-                            content = diaryText.text
-                        )
-                    )
-                    entries = db.diaryEntryDao().getAll()
+                    db.dailyMoodDao().updateContent(date = selectedDate, content = diaryText.text)
+                    entries = db.dailyMoodDao().getAll()
                 }
             },
             modifier = Modifier.fillMaxWidth()
@@ -128,7 +123,7 @@ fun DiaryPageFeature(db: AppDatabase) {
 
 @Composable
 fun DiaryEntryItem(
-    entry: DiaryEntry,
+    entry: DailyMood,
     isSelected: Boolean,
     onClick: () -> Unit
 ) {
