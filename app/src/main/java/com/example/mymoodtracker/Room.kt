@@ -50,13 +50,6 @@ interface DailyMoodDao {
     suspend fun delete(moodValue: DailyMood)
 }
 
-// DIARY database --------------------------------------------------------------
-@Entity
-data class DiaryEntry(
-    @PrimaryKey val date: Long,          // e.g., 20260113
-    @ColumnInfo(name = "content") val content: String
-)
-
 // All Databases --------------------------------------------------------------
 @Database(entities = [DailyMood::class], version = 3, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
@@ -105,7 +98,7 @@ fun getDayString(date: Long): String {
 suspend fun setUpDailyMood(db: AppDatabase) {
     val dao = db.dailyMoodDao()
     val today = getDayInt(Date())
-    val firstDay = dao.getFirstDay()?.date ?: today
+    val firstDay = dao.getFirstDay().date
     val existingDates = dao.getAll().map { it.date }.toSet()
 
     // Create calendar starting from firstDay

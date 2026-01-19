@@ -108,11 +108,11 @@ fun DiaryPageFeature(db: AppDatabase) {
                 .fillMaxWidth()
                 .weight(1f)
         ) {
-            items(entries) { entry ->
+            items(entries.reversed()) { entry ->
                 DiaryEntryItem(
                     entry = entry,
                     isSelected = entry.date == selectedDate,
-                    onClick = { selectedDate = entry.date }
+                    onClick = { selectedDate = entry.date },
                 )
             }
         }
@@ -130,6 +130,7 @@ fun DiaryEntryItem(
     Surface(
         tonalElevation = if (isSelected) 4.dp else 0.dp,
         shape = MaterialTheme.shapes.medium,
+        color = if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.primaryContainer,
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 4.dp)

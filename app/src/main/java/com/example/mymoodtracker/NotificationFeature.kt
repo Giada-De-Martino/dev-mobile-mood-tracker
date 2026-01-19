@@ -1,20 +1,10 @@
-import android.app.NotificationChannel
+package com.example.mymoodtracker
+
 import android.app.NotificationManager
 import android.content.Context
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.ui.platform.LocalContext
 import androidx.core.app.NotificationCompat
 import androidx.work.CoroutineWorker
-import androidx.work.ExistingPeriodicWorkPolicy
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.PeriodicWorkRequestBuilder
-import androidx.work.WorkManager
 import androidx.work.WorkerParameters
-import com.example.mymoodtracker.R
-import java.util.concurrent.TimeUnit
-import com.example.mymoodtracker.AppDatabase
-import com.example.mymoodtracker.getDayInt
 import java.util.Date
 
 class NotificationWorker(
@@ -22,22 +12,21 @@ class NotificationWorker(
     params: WorkerParameters
 ) : CoroutineWorker(context, params) {
 
-    private val db = AppDatabase.getInstance(context) // your Room DB
+    private val db = AppDatabase.getInstance(context)
 
     override suspend fun doWork(): Result {
         val today = getDayInt(Date())
-        val moods = db.dailyMoodDao().getAll()
-        val todayMood = moods.find { it.date == today }
+        val todayMood = db.dailyMoodDao().getAll().find { it.date == today }
 
-        if (todayMood?.value == 0) {
+        if (todayMood == null || todayMood.value == 0) {
             sendNotification("Mood Tracker", "You haven't recorded your mood today!")
         }
 
-        if (todayMood?.content == "") {
+        if (todayMood == null || todayMood.content.isEmpty()) {
             sendNotification("Mood Tracker", "You haven't written a diary entry today!")
         }
 
-        // TO TEST
+        // TEST
         sendNotification("Testing", "This is a test notification")
         return Result.success()
     }
@@ -45,41 +34,15 @@ class NotificationWorker(
     private fun sendNotification(title: String, message: String) {
         val notificationManager =
             applicationContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
         val channelId = "mood_reminder_channel"
-
-        val channel = NotificationChannel(channelId, "Mood Reminders", NotificationManager.IMPORTANCE_HIGH)
-        notificationManager.createNotificationChannel(channel)
-
         val notification = NotificationCompat.Builder(applicationContext, channelId)
             .setContentTitle(title)
             .setContentText(message)
-            .setSmallIcon(R.drawable.ic_launcher_foreground) // replace with your app icon
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .build()
 
-        notificationManager.notify(1, notification)
-    }
-}
-
-@Composable
-fun SetupDailyMoodReminder() {
-    val context = LocalContext.current
-    LaunchedEffect(Unit) {
-        val workManager = WorkManager.getInstance(context)
-
-        // TO TEST
-        val testRequest = OneTimeWorkRequestBuilder<NotificationWorker>()
-            .build()
-        workManager.enqueue(testRequest)
-
-        val dailyWorkRequest = PeriodicWorkRequestBuilder<NotificationWorker>(15, TimeUnit.MINUTES)
-            .addTag("daily_mood_reminder")
-            .build()
-
-        workManager.enqueueUniquePeriodicWork(
-            "daily_mood_reminder",
-            ExistingPeriodicWorkPolicy.REPLACE,
-            dailyWorkRequest
-        )
+        notificationManager.notify((System.currentTimeMillis() % 10000).toInt(), notification)
     }
 }
