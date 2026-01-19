@@ -30,7 +30,7 @@ import java.util.Locale
 data class MoodOption(val label: String, val color: Color)
 
 val moodOptions = listOf(
-    MoodOption("No data", Color(0xFFF5F5F5)),       // Light grey
+    MoodOption("No data", Color(0x00000000)),       // Transparent
     MoodOption("Sad", Color(0xFF1E81B0)),           // Red-ish
     MoodOption("A bit down", Color(0xFF4DA8DA)),    // Orange
     MoodOption("Quiet day", Color(0xFF90C3D4)),     // Yellow
