@@ -1,6 +1,5 @@
 package com.example.mymoodtracker
 
-import android.util.Log
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -45,9 +44,8 @@ fun FirstPage(db: AppDatabase){
     LaunchedEffect(Unit) {
         scheduleDailyReminder(context, "Mood Tracker", "Don't forget to record your mood today 🌤️", 14, 40)
         scheduleDailyReminder(context, "Diary Reminder", "Take a moment to write your diary entry ✍️", 14, 42)
-        /** TO TEST
-         * sendTestNotificationNow(context) */
-        Log.d("FirstPage", "Notifications scheduled")
+        /** TO TEST */
+        // sendTestNotificationNow(context)
     }
 
     /** TO GET ALL THE DATA */
@@ -56,13 +54,11 @@ fun FirstPage(db: AppDatabase){
 
     LaunchedEffect(Unit) {
         /** TO TEST */
-        db.dailyMoodDao().insertAll(SampleData.moodList)
+        // db.dailyMoodDao().insertAll(SampleData.moodList)
 
         setUpDailyMood(db)
         moods = db.dailyMoodDao().getAll()
         scrollState.scrollTo(scrollState.maxValue)
-
-
     }
 
     Column(
@@ -341,7 +337,7 @@ fun MoodList(
     // Dialog to change mood for selected day
     if (showDialog && selectedMood != null) {
         AlertDialog(
-            onDismissRequest = { },
+            onDismissRequest = { showDialog = false },
             title = { Text("Change mood for ${getDayString(selectedMood!!.date)}") },
             text = {
                 Column {
@@ -352,6 +348,7 @@ fun MoodList(
                                 .fillMaxWidth()
                                 .padding(vertical = 4.dp),
                             onClick = {
+                                showDialog = false
                                 val newValue = moodOptions.indexOf(moodOption)
                                 scope.launch(Dispatchers.IO) {
                                     db.dailyMoodDao().updateMood(selectedMood!!.date, newValue)
