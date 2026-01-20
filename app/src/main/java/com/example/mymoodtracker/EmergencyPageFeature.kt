@@ -1,5 +1,6 @@
 package com.example.mymoodtracker
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.FavoriteBorder
@@ -7,8 +8,12 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import kotlinx.coroutines.launch
 import okhttp3.OkHttpClient
@@ -22,6 +27,8 @@ fun EmergencyPage() {
 
     var imageUrl by remember { mutableStateOf<String?>(null) }
     var isLoading by remember { mutableStateOf(false) }
+    var imageCount by remember { mutableIntStateOf(0) }
+    var showAd by remember { mutableStateOf(true) }
 
     val scope = rememberCoroutineScope()
 
@@ -37,28 +44,39 @@ fun EmergencyPage() {
             style = MaterialTheme.typography.headlineMedium
         )
 
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(16.dp))
 
-        when {
-            isLoading -> {
-                CircularProgressIndicator()
-            }
+        // This Box now takes all available space between the header and the footer
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxWidth(),
+            contentAlignment = Alignment.Center
+        ) {
+            when {
+                isLoading -> {
+                    CircularProgressIndicator()
+                }
 
-            imageUrl != null -> {
-                AsyncImage(
-                    model = imageUrl,
-                    contentDescription = "Cute animal",
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(300.dp)
-                )
+                showAd -> {
+                    AdPlaceholder()
+                }
+
+                imageUrl != null -> {
+                    AsyncImage(
+                        model = imageUrl,
+                        contentDescription = "Cute animal",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Fit
+                    )
+                }
             }
         }
 
-        Spacer(modifier = Modifier.weight(1f))
+        Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "Take a breath. You're safe.\nHere’s something cute.",
+            text = if (showAd) "Check out this offer!" else "Take a breath. You're safe.\nHere’s something cute.",
             style = MaterialTheme.typography.bodyMedium,
             textAlign = TextAlign.Center,
         )
@@ -69,16 +87,35 @@ fun EmergencyPage() {
             onClick = {
                 scope.launch {
                     isLoading = true
-                    imageUrl = fetchCuteAnimal()
+                    
+                    if (showAd) {
+                        imageUrl = fetchCuteAnimal()
+                        if (imageUrl != null) {
+                            showAd = false
+                            imageCount++
+                        }
+                    } else {
+                        val nextImage = fetchCuteAnimal()
+                        if (nextImage != null) {
+                            imageUrl = nextImage
+                            imageCount++
+                            if (imageCount % 10 == 0) {
+                                showAd = true
+                            }
+                        }
+                    }
                     isLoading = false
                 }
-            }
+            },
+            modifier = Modifier.fillMaxWidth()
         ) {
             Row(horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically) {
-                Text("Show me cute animals",
+                Text(
+                    text = if (showAd && imageCount > 0) "Dismiss Ad & See More" else "Show me cute animals",
                     style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onPrimary)
-                Spacer(modifier = Modifier.width(8.dp)) // space between text and icon
+                    color = MaterialTheme.colorScheme.onPrimary
+                )
+                Spacer(modifier = Modifier.width(8.dp))
                 Icon(
                     imageVector = Icons.Default.FavoriteBorder,
                     contentDescription = "Favorite",
@@ -86,7 +123,38 @@ fun EmergencyPage() {
                 )
             }
         }
+        
+        Spacer(modifier = Modifier.height(16.dp))
+    }
+}
 
+@Composable
+fun AdPlaceholder() {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.LightGray.copy(alpha = 0.3f)),
+        contentAlignment = Alignment.Center
+    ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Text(
+                text = "ADVERTISEMENT",
+                style = MaterialTheme.typography.labelSmall,
+                color = Color.Gray
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            Text(
+                text = "Get Premium for no ads!",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = "Support the Mood Tracker app",
+                style = MaterialTheme.typography.bodySmall
+            )
+        }
     }
 }
 
@@ -114,4 +182,3 @@ suspend fun fetchCuteAnimal(): String? {
         }
     }
 }
-

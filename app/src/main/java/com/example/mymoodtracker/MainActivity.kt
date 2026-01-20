@@ -25,6 +25,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+        /** TO ACCEPT NOTIFICATION */
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(
                     this,
@@ -39,7 +40,7 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        /** Test notification safely */
+        /** Test notification Firebased safely */
         testLocalNotification()
 
         val database = Room.databaseBuilder(
