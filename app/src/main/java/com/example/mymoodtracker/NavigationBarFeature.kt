@@ -6,9 +6,11 @@ import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarDefaults
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,6 +19,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -67,10 +70,16 @@ fun NavigationBarFeature(db: AppDatabase, modifier: Modifier = Modifier) {
     Scaffold(
         modifier = modifier,
         bottomBar = {
-            NavigationBar(windowInsets = NavigationBarDefaults.windowInsets) {
+            NavigationBar(
+                // 1. Change the background color of the Bar
+                containerColor = MaterialTheme.colorScheme.primaryContainer,
+                windowInsets = NavigationBarDefaults.windowInsets
+            ) {
                 Destination.entries.forEachIndexed { index, destination ->
+                    val isSelected = selectedDestination == index
+                    
                     NavigationBarItem(
-                        selected = selectedDestination == index,
+                        selected = isSelected,
                         onClick = {
                             navController.navigate(route = destination.route)
                             selectedDestination = index
@@ -81,7 +90,15 @@ fun NavigationBarFeature(db: AppDatabase, modifier: Modifier = Modifier) {
                                 contentDescription = destination.contentDescription
                             )
                         },
-                        label = { Text(destination.label) }
+                        label = { Text(destination.label) },
+                        // 2. Change the colors of the Icons and Text
+                        colors = NavigationBarItemDefaults.colors(
+                            selectedIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                            selectedTextColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                            unselectedIconColor = MaterialTheme.colorScheme.primary,
+                            unselectedTextColor = MaterialTheme.colorScheme.primary,
+                            indicatorColor = MaterialTheme.colorScheme.onPrimary
+                        )
                     )
                 }
             }

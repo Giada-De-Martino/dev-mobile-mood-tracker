@@ -45,7 +45,7 @@ fun FirstPage(db: AppDatabase){
         scheduleDailyReminder(context, "Mood Tracker", "Don't forget to record your mood today 🌤️", 14, 40)
         scheduleDailyReminder(context, "Diary Reminder", "Take a moment to write your diary entry ✍️", 14, 42)
         /** TO TEST */
-        // sendTestNotificationNow(context)
+        sendTestNotificationNow(context)
     }
 
     /** TO GET ALL THE DATA */
@@ -132,7 +132,7 @@ fun GraphScreen(
                 title = { Text("How are you feeling today?") },
                 text = {
                     Column {
-                        moodOptions.drop(1).forEach { mood ->
+                        moodOptions.drop(1).reversed().forEach { mood ->
                             Button(
                                 colors = ButtonDefaults.buttonColors(containerColor = mood.color),
                                 modifier = Modifier

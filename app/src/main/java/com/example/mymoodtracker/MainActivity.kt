@@ -1,6 +1,9 @@
 package com.example.mymoodtracker
 
 import android.Manifest
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -11,6 +14,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.ui.Modifier
 import androidx.core.app.ActivityCompat
+import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import androidx.room.Room
 import com.example.mymoodtracker.ui.theme.MyMoodTrackerTheme
@@ -35,6 +39,9 @@ class MainActivity : ComponentActivity() {
             }
         }
 
+        /** Test notification safely */
+        testLocalNotification()
+
         val database = Room.databaseBuilder(
                 applicationContext,
                 AppDatabase::class.java,
@@ -49,5 +56,26 @@ class MainActivity : ComponentActivity() {
                 NavigationBarFeature(database)
             }
         }
+    }
+
+    private fun testLocalNotification() {
+        val channelId = "default_channel"
+        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+        val channel = NotificationChannel(
+            channelId,
+            "Weather Notifications",
+            NotificationManager.IMPORTANCE_HIGH
+        )
+        notificationManager.createNotificationChannel(channel)
+
+        val notification = NotificationCompat.Builder(this, channelId)
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .setContentTitle("It's a Beautiful Day! ☀️")
+            .setContentText("The sun is shining! It's going to be a good day!")
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .build()
+
+        notificationManager.notify(1, notification)
     }
 }
