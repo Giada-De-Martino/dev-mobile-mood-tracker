@@ -1,4 +1,4 @@
-package com.example.mymoodtracker
+package com.example.mymoodtracker.ui.screens
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -12,12 +12,15 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
+import com.example.mymoodtracker.data.database.AppDatabase
+import com.example.mymoodtracker.data.model.DailyMood
+import com.example.mymoodtracker.utils.getDayInt
+import com.example.mymoodtracker.utils.getDayString
 import kotlinx.coroutines.launch
 import java.util.Date
 
-
 @Composable
-fun DiaryPageFeature(db: AppDatabase) {
+fun DiaryScreen(db: AppDatabase) {
     val scope = rememberCoroutineScope()
     val lazyListState = rememberLazyListState()
     val today = getDayInt(Date())
@@ -40,9 +43,6 @@ fun DiaryPageFeature(db: AppDatabase) {
             .fillMaxSize()
             .padding(16.dp)
     ) {
-
-        /** ---------- HEADER ---------- */
-
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
@@ -65,8 +65,6 @@ fun DiaryPageFeature(db: AppDatabase) {
         }
 
         Spacer(modifier = Modifier.height(12.dp))
-
-        /** ---------- EDITOR ---------- */
 
         BasicTextField(
             value = diaryText,
@@ -98,8 +96,6 @@ fun DiaryPageFeature(db: AppDatabase) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        /** ---------- ENTRY LIST ---------- */
-
         Text(
             text = "All Entries",
             style = MaterialTheme.typography.titleMedium
@@ -123,8 +119,6 @@ fun DiaryPageFeature(db: AppDatabase) {
         }
     }
 }
-
-
 
 @Composable
 fun DiaryEntryItem(

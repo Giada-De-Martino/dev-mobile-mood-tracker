@@ -1,10 +1,11 @@
-package com.example.mymoodtracker
+package com.example.mymoodtracker.utils
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import androidx.core.app.NotificationCompat
 import androidx.work.*
+import com.example.mymoodtracker.R
 import java.util.concurrent.TimeUnit
 import java.util.Calendar
 

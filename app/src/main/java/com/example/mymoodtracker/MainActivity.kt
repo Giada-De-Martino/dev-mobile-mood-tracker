@@ -3,21 +3,24 @@ package com.example.mymoodtracker
 import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
-import androidx.compose.ui.Modifier
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.platform.LocalContext
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import androidx.room.Room
+import com.example.mymoodtracker.data.database.AppDatabase
 import com.example.mymoodtracker.ui.theme.MyMoodTrackerTheme
+import com.example.mymoodtracker.utils.NavigationBarFeature
+import com.example.mymoodtracker.utils.scheduleDailyReminder
+import com.example.mymoodtracker.utils.sendTestNotificationNow
 
 class MainActivity : ComponentActivity() {
 
@@ -25,7 +28,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        /** TO ACCEPT NOTIFICATION */
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(
                     this,
@@ -40,7 +42,6 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        /** Test notification Firebased safely */
         testLocalNotification()
 
         val database = Room.databaseBuilder(
@@ -51,17 +52,16 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             MyMoodTrackerTheme {
-                Surface(modifier = Modifier.fillMaxSize()) {
-                    FirstPage(database)
-                }
+                notification()
                 NavigationBarFeature(database)
             }
         }
     }
 
+    /** FIREBASE NOTIFICATIONS */
     private fun testLocalNotification() {
         val channelId = "default_channel"
-        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
 
         val channel = NotificationChannel(
             channelId,
@@ -79,4 +79,17 @@ class MainActivity : ComponentActivity() {
 
         notificationManager.notify(1, notification)
     }
+
+    /** WORKER NOTIFICATIONS */
+    @Composable
+    fun notification() {
+        val context = LocalContext.current
+
+        LaunchedEffect(Unit) {
+            scheduleDailyReminder(context, "Mood Tracker", "Don't forget to record your mood today 🌤️", 9, 0)
+            scheduleDailyReminder(context, "Diary Reminder", "Take a moment to write your diary entry ✍️", 9, 0)
+            sendTestNotificationNow(context)
+        }
+    }
+    
 }

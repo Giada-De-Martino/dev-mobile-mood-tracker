@@ -1,4 +1,4 @@
-package com.example.mymoodtracker
+package com.example.mymoodtracker.utils
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -19,12 +19,16 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.mymoodtracker.data.database.AppDatabase
+import com.example.mymoodtracker.ui.screens.DiaryScreen
+import com.example.mymoodtracker.ui.screens.EmergencyScreen
+import com.example.mymoodtracker.ui.screens.MoodScreen
+
 
 enum class Destination(
     val route: String,
@@ -52,9 +56,9 @@ fun AppNavHost(
         Destination.entries.forEach { destination ->
             composable(destination.route) {
                 when (destination) {
-                    Destination.DIARY-> DiaryPageFeature(db)
-                    Destination.MOOD -> FirstPage(db)
-                    Destination.EMERGENCY -> EmergencyPage()
+                    Destination.DIARY-> DiaryScreen(db)
+                    Destination.MOOD -> MoodScreen(db)
+                    Destination.EMERGENCY -> EmergencyScreen()
                 }
             }
         }

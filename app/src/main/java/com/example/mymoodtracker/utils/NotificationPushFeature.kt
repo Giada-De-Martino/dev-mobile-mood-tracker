@@ -1,4 +1,4 @@
-package com.example.mymoodtracker
+package com.example.mymoodtracker.utils
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -7,6 +7,8 @@ import android.content.Intent
 import android.media.RingtoneManager
 import android.util.Log
 import androidx.core.app.NotificationCompat
+import com.example.mymoodtracker.MainActivity
+import com.example.mymoodtracker.R
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import kotlinx.coroutines.CoroutineScope

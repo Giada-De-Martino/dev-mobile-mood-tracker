@@ -1,4 +1,4 @@
-package com.example.mymoodtracker
+package com.example.mymoodtracker.ui.screens
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -15,15 +15,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.nativeCanvas
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import com.example.mymoodtracker.data.database.AppDatabase
+import com.example.mymoodtracker.data.model.DailyMood
+import com.example.mymoodtracker.utils.getDayInt
+import com.example.mymoodtracker.utils.getDayString
+import com.example.mymoodtracker.utils.setUpDailyMood
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Date
-import java.util.Locale
+import java.util.*
 
 data class MoodOption(val label: String, val color: Color)
 
@@ -37,25 +39,11 @@ val moodOptions = listOf(
 )
 
 @Composable
-fun FirstPage(db: AppDatabase){
-    /** TO SEND NOTIFICATIONS */
-    val context = LocalContext.current
-
-    LaunchedEffect(Unit) {
-        scheduleDailyReminder(context, "Mood Tracker", "Don't forget to record your mood today 🌤️", 14, 40)
-        scheduleDailyReminder(context, "Diary Reminder", "Take a moment to write your diary entry ✍️", 14, 42)
-        /** TO TEST */
-        sendTestNotificationNow(context)
-    }
-
-    /** TO GET ALL THE DATA */
+fun MoodScreen(db: AppDatabase) {
     var moods by remember { mutableStateOf<List<DailyMood>>(emptyList()) }
     val scrollState = rememberScrollState()
 
     LaunchedEffect(Unit) {
-        /** TO TEST */
-        // db.dailyMoodDao().insertAll(SampleData.moodList)
-
         setUpDailyMood(db)
         moods = db.dailyMoodDao().getAll()
         scrollState.scrollTo(scrollState.maxValue)
@@ -66,24 +54,22 @@ fun FirstPage(db: AppDatabase){
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        GraphScreen(moods, {moods = it}, db)
+        GraphSection(moods, { moods = it }, db)
         Spacer(Modifier.height(10.dp))
-        MoodList(moods, db, {moods = it})
+        MoodList(moods, db) { moods = it }
     }
 }
 
 @Composable
-fun GraphScreen(
+fun GraphSection(
     moods: List<DailyMood>,
     onMoodsUpdated: (List<DailyMood>) -> Unit,
     db: AppDatabase
 ) {
     var showDialog by remember { mutableStateOf(false) }
-
     val scrollState = rememberScrollState()
     val scope = rememberCoroutineScope()
 
-    // Scroll to end whenever moods change
     LaunchedEffect(moods.size) {
         scrollState.animateScrollTo(scrollState.maxValue)
     }
@@ -112,7 +98,7 @@ fun GraphScreen(
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            GraphLine(moods) // directly use parent state
+            GraphLine(moods)
         }
     }
 
@@ -143,7 +129,6 @@ fun GraphScreen(
 
                                     scope.launch(Dispatchers.IO) {
                                         db.dailyMoodDao().updateMood(getDayInt(Date()), moodOptions.indexOf(mood))
-
                                         val updated = db.dailyMoodDao().getAll()
                                         withContext(Dispatchers.Main) {
                                             onMoodsUpdated(updated)
@@ -169,7 +154,6 @@ fun GraphScreen(
 
 @Composable
 fun GraphLine(data: List<DailyMood>) {
-
     val lineColor = MaterialTheme.colorScheme.primary
     val textColor = MaterialTheme.colorScheme.onPrimaryContainer
     val pointSpacing = 80.dp
@@ -189,13 +173,11 @@ fun GraphLine(data: List<DailyMood>) {
         val minValue = 1f
         val stepX = size.width / data.size
 
-        // Horizontal grid
         for (i in 0..4) {
             val y = size.height - (i / 4f * size.height)
             drawLine(lineColor, Offset(0f, y), Offset(size.maxDimension, y), 1f)
         }
 
-        // Background rounded bars
         data.forEachIndexed { i, mood ->
             if (mood.value > 0) {
                 val x = i * stepX + stepX / 2
@@ -219,7 +201,6 @@ fun GraphLine(data: List<DailyMood>) {
             }
         }
 
-        // Lines: connect only non-zero points
         var previousValidIndex: Int? = null
         data.forEachIndexed { i, mood ->
             if (mood.value > 0) {
@@ -229,17 +210,14 @@ fun GraphLine(data: List<DailyMood>) {
                     val x2 = i * stepX + stepX / 2
                     val y1 = size.height - ((data[prev].value - minValue) / (maxValue - minValue)) * size.height
                     val y2 = size.height - ((mood.value - minValue) / (maxValue - minValue)) * size.height
-
                     drawLine(lineColor, Offset(x1, y1), Offset(x2, y2), 6f)
                 }
                 previousValidIndex = i
             }
         }
 
-        // Points + dates: draw only non-zero moods
         data.forEachIndexed { i, mood ->
             val x = i * stepX + stepX / 2
-
             val calendar = Calendar.getInstance().apply {
                 set(
                     (mood.date / 10000).toInt(),
@@ -266,6 +244,7 @@ fun GraphLine(data: List<DailyMood>) {
         }
     }
 }
+
 @Composable
 fun MoodList(
     moods: List<DailyMood>,
@@ -301,7 +280,7 @@ fun MoodList(
                 .verticalScroll(rememberScrollState())
         ) {
             moods
-                .sortedByDescending { it.date } // latest first
+                .sortedByDescending { it.date }
                 .forEach { mood ->
                     val moodOption = moodOptions[mood.value]
 
@@ -318,7 +297,6 @@ fun MoodList(
                         Box(
                             modifier = Modifier
                                 .size(50.dp)
-                                .fillMaxWidth()
                                 .background(
                                     color = moodOption.color,
                                     shape = MaterialTheme.shapes.small
@@ -334,7 +312,6 @@ fun MoodList(
         }
     }
 
-    // Dialog to change mood for selected day
     if (showDialog && selectedMood != null) {
         AlertDialog(
             onDismissRequest = { showDialog = false },

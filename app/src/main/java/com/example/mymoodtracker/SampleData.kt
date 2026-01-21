@@ -1,6 +1,8 @@
 package com.example.mymoodtracker
 
 import java.util.Date
+import com.example.mymoodtracker.data.model.DailyMood
+import com.example.mymoodtracker.utils.getDayInt
 
 /**
  * SampleData for Jetpack Compose Tutorial

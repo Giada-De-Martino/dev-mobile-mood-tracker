@@ -1,4 +1,4 @@
-package com.example.mymoodtracker
+package com.example.mymoodtracker.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -15,22 +15,20 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.json.JSONArray
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import kotlin.random.Random
 
 @Composable
-fun EmergencyPage() {
-
+fun EmergencyScreen() {
     var imageUrl by remember { mutableStateOf<String?>(null) }
     var isLoading by remember { mutableStateOf(false) }
     var imageCount by remember { mutableIntStateOf(0) }
     var showAd by remember { mutableStateOf(true) }
-
     val scope = rememberCoroutineScope()
 
     Column(
@@ -39,7 +37,6 @@ fun EmergencyPage() {
             .padding(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-
         Text(
             text = "Emergency Comfort",
             style = MaterialTheme.typography.headlineMedium
@@ -47,7 +44,6 @@ fun EmergencyPage() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // This Box takes all available space between the header and the footer
         Box(
             modifier = Modifier
                 .weight(1f)
@@ -58,11 +54,9 @@ fun EmergencyPage() {
                 isLoading -> {
                     CircularProgressIndicator()
                 }
-
                 showAd -> {
                     AdPlaceholder()
                 }
-
                 imageUrl != null -> {
                     AsyncImage(
                         model = imageUrl,
@@ -88,7 +82,6 @@ fun EmergencyPage() {
             onClick = {
                 scope.launch {
                     isLoading = true
-                    
                     if (showAd) {
                         imageUrl = fetchCuteAnimal()
                         if (imageUrl != null) {
@@ -163,27 +156,17 @@ suspend fun fetchCuteAnimal(): String? {
     return withContext(Dispatchers.IO) {
         try {
             val client = OkHttpClient()
-            
-            // Randomly pick between Dog API and Cat API
             val apiUrl = if (Random.nextBoolean()) {
                 "https://api.thedogapi.com/v1/images/search"
             } else {
                 "https://api.thecatapi.com/v1/images/search"
             }
-
-            val request = Request.Builder()
-                .url(apiUrl)
-                .build()
-
+            val request = Request.Builder().url(apiUrl).build()
             val response = client.newCall(request).execute()
-
             if (!response.isSuccessful) return@withContext null
-
             val body = response.body?.string() ?: return@withContext null
             val jsonArray = JSONArray(body)
-
             jsonArray.getJSONObject(0).getString("url")
-
         } catch (e: Exception) {
             e.printStackTrace()
             null
