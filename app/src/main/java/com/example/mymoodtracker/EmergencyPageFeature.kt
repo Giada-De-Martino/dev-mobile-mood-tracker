@@ -21,6 +21,7 @@ import okhttp3.Request
 import org.json.JSONArray
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import kotlin.random.Random
 
 @Composable
 fun EmergencyPage() {
@@ -46,7 +47,7 @@ fun EmergencyPage() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // This Box now takes all available space between the header and the footer
+        // This Box takes all available space between the header and the footer
         Box(
             modifier = Modifier
                 .weight(1f)
@@ -162,9 +163,16 @@ suspend fun fetchCuteAnimal(): String? {
     return withContext(Dispatchers.IO) {
         try {
             val client = OkHttpClient()
+            
+            // Randomly pick between Dog API and Cat API
+            val apiUrl = if (Random.nextBoolean()) {
+                "https://api.thedogapi.com/v1/images/search"
+            } else {
+                "https://api.thecatapi.com/v1/images/search"
+            }
 
             val request = Request.Builder()
-                .url("https://api.thedogapi.com/v1/images/search")
+                .url(apiUrl)
                 .build()
 
             val response = client.newCall(request).execute()
