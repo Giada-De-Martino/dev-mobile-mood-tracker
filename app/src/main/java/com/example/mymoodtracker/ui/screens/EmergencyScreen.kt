@@ -1,6 +1,5 @@
 package com.example.mymoodtracker.ui.screens
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.FavoriteBorder
@@ -8,12 +7,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -22,6 +18,10 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.json.JSONArray
 import kotlin.random.Random
+import androidx.compose.ui.viewinterop.AndroidView
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
 
 @Composable
 fun EmergencyScreen() {
@@ -55,7 +55,10 @@ fun EmergencyScreen() {
                     CircularProgressIndicator()
                 }
                 showAd -> {
-                    AdPlaceholder()
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text("Sponsorisé", style = MaterialTheme.typography.labelSmall)
+                        RealAdBanner()
+                    }
                 }
                 imageUrl != null -> {
                     AsyncImage(
@@ -122,36 +125,6 @@ fun EmergencyScreen() {
     }
 }
 
-@Composable
-fun AdPlaceholder() {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.LightGray.copy(alpha = 0.3f)),
-        contentAlignment = Alignment.Center
-    ) {
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            Text(
-                text = "ADVERTISEMENT",
-                style = MaterialTheme.typography.labelSmall,
-                color = Color.Gray
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            Text(
-                text = "Get Premium for no ads!",
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Bold,
-                textAlign = TextAlign.Center
-            )
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(
-                text = "Support the Mood Tracker app",
-                style = MaterialTheme.typography.bodySmall
-            )
-        }
-    }
-}
-
 suspend fun fetchCuteAnimal(): String? {
     return withContext(Dispatchers.IO) {
         try {
@@ -172,4 +145,19 @@ suspend fun fetchCuteAnimal(): String? {
             null
         }
     }
+}
+
+@Composable
+fun RealAdBanner() {
+    AndroidView(
+        modifier = Modifier.fillMaxWidth(),
+        factory = { context ->
+            AdView(context).apply {
+                // ID de test fourni par Google pour le développement
+                setAdSize(AdSize.MEDIUM_RECTANGLE)
+                adUnitId = "ca-app-pub-3940256099942544/6300978111"
+                loadAd(AdRequest.Builder().build())
+            }
+        }
+    )
 }

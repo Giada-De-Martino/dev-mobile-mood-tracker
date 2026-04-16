@@ -21,6 +21,7 @@ import com.example.mymoodtracker.ui.theme.MyMoodTrackerTheme
 import com.example.mymoodtracker.utils.NavigationBarFeature
 import com.example.mymoodtracker.utils.scheduleDailyReminder
 import com.example.mymoodtracker.utils.sendTestNotificationNow
+import com.google.android.gms.ads.MobileAds
 
 class MainActivity : ComponentActivity() {
 
@@ -51,6 +52,7 @@ class MainActivity : ComponentActivity() {
             ).fallbackToDestructiveMigration(false).build()
 
         setContent {
+            MobileAds.initialize(this) {} // TO SET ADDS
             MyMoodTrackerTheme {
                 notification()
                 NavigationBarFeature(database)
